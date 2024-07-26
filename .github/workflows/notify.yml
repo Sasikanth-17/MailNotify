@@ -22,5 +22,5 @@ jobs:
         password: ${{ secrets.GMAIL_PASSWORD }}
         subject: New Push to Repository
         body: A new push has been made to the repository.
-        to: praneetha.bonala@azistaindustries.com
+        to: abdul.shukoor@azistaindustries.com, praneetha.bonala@gmail.com
         from: kanthsasi17@gmail.com
