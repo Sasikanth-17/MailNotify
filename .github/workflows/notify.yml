@@ -1,0 +1,26 @@
+name: Notify on Push
+
+on: 
+  push:
+    branches:
+      - main  # or any branch you want to monitor
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Send email
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 587
+        username: ${{ secrets.GMAIL_USERNAME }}
+        password: ${{ secrets.GMAIL_PASSWORD }}
+        subject: New Push to Repository
+        body: A new push has been made to the repository.
+        to: abdul.shukoor@azistaindustries.com
+        from: kanthsasi17@gmail.com
